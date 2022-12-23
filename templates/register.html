@@ -1,0 +1,10 @@
+{% extends '/index.html' %}
+{%block content%}
+<form class='form' method="post">
+    {% csrf_token %}
+    {{ form |crispy}}
+
+    <button type="submit" id="submit"> Registrarse</button>
+</form>
+
+{%endblock%}

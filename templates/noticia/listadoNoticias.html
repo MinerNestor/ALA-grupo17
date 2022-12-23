@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="es-ar">
+{% extends 'base.html' %}
+{%block content%}
+{%load static%}
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="TemplateMo">
+  <link href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i&display=swap" rel="stylesheet">
+
+  <title>Fundacion ALA' Noticias</title>
+
+  <!-- Bootstrap core CSS -->
+  <link href={%static "vendor/bootstrap/css/bootstrap.min.css"%} rel="stylesheet">
+
+
+  <!-- Additional CSS Files -->
+  <link rel="stylesheet" href="static/assets/css/fontawesome.css">
+  <link rel="stylesheet" href="static/assets/css/templatemo-stand-blog.css">
+  <link rel="stylesheet" href="static/assets/css/owl.css">
+<!--
+
+TemplateMo 551 Stand Blog
+
+https://templatemo.com/tm-551-stand-blog
+
+-->
+</head>
+<!-- End Header -->
+
+
+<!-- ======= service selection ======= -->
+<section id="services" class="services section-bg">
+    <div class="container" data-aos="fade-up">
+
+      <div class="section-title">
+        <h2>Noticias</h2>
+        <p>Mirá nuesetras actividades</p>
+      </div>
+
+      <div class="row">
+
+        {% for n in object_list %}
+
+
+            
+            <div class="icon-box">
+
+                {% if n.imagen %} <img src="{{n.imagen.url}}" class = "img-fluid animated" alt = "">
+                {% else %} <img src="static/assets/img/default.png">
+                {% endif%}
+
+                <div class="icon"><i class=""></i></div>
+                <h4><a href="">{{n.titulo}}</a></h4>
+                <h6><a href="">{{n.subtitulo}}</a></h6>
+                <h4><a href="">{{n.publicado}}</a></h4>
+                <p>{{n.texto}}</p>
+        
+            
+            </div>
+        {% endfor %}
+
+      </div>
+
+    </div>
+  </section><!-- End Services Section -->
+
+
+
+
+
+
+</html>
+
+{%endblock%}

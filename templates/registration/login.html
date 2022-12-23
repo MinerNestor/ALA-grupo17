@@ -1,0 +1,50 @@
+
+
+
+
+
+
+<!doctype html>
+<html lang="es">
+{% load crispy_forms_tags %}
+{% load static %}   
+
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+    <meta name="generator" content="Hugo 0.104.2">
+    <title>Ala ONG Login </title>
+
+    <link rel="canonical" href="https://getbootstrap.com/docs/5.2/examples/sign-in/">
+    <link href={% static 'assets/css/bootstrap.min.css' %} rel="stylesheet">
+    <link href={% static 'assets/css/signin.css' %} rel="stylesheet">
+
+    <link href={% static 'assets/css/custom.css' %} rel="stylesheet">
+  
+    
+  </head 
+  
+  
+  
+  
+ 
+    <br>
+    
+    <form action="" method="post">
+        {% csrf_token %}
+    
+        <div class="card mx-auto" style="width: 30rem;">
+          <div class="card-body">
+            <h5 class="card-title">Ingrese sus Credenciales</h5>
+            {{ form | crispy }}
+            <a href={% url 'index' %} class="card-link">Inicio</a>
+            <a href={% url 'register' %} class="card-link">Registrarse</a>
+            <button class="btn btn-sm btn-primary float-end" type="submit">Iniciar Sesión</button>
+          </div>
+        </div>
+    </form>
+
+</html>
+
